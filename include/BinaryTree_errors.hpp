@@ -16,7 +16,8 @@
 
 enum BinaryTreeStatusCode {
 	TREE_NO_ERROR,
-	TREE_ALLOC_ERROR
+	TREE_ALLOC_ERROR,
+	TREE_INVALID_TYPE,
 };
 
 const char* BinaryTreeErrorsMessenger(BinaryTreeStatusCode status);

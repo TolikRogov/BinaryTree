@@ -4,15 +4,19 @@ int main() {
 
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 
-	Node_t node1 = {.data = 20};
-	Node_t node2 = {.data = 10};
-	Node_t node3 = {.data = 30};
-	node1.left = &node2;
-	node1.right = &node3;
+	Data_t array[] = {5, 8, 5, 3, 4, 6, 1, 5, 6, 2, 7};
+	size_t array_size = sizeof(array) / sizeof(array[0]);
 
-	tree_status = TreePrint(&node1);
-	TREE_ERROR_CHECK(tree_status);
-	printf("\n");
+	INIT_TREE(root);
+
+	TreePrintType order = IN_ORDER;
+
+	for (size_t i = 0; i < array_size; i++)
+		INSERT_IN_TREE(root, array[i], order);
+
+	PRINT_TREE(root, order);
+
+	TreeDtor(root);
 
 	return 0;
 }
