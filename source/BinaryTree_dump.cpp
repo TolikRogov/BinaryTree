@@ -31,13 +31,14 @@ BinaryTreeStatusCode BinaryTreeHtmlDumpStart() {
 	HTML_PRINTF("\t<body><tt><pre>\n");
 	HTML_PRINTF("\t\t\t\t\t\t\t\t\t\t\t<a class='head'>MEGA DUMP</a><br>\n");
 
-		HTML_PRINTF("\t<div class='dump'>\n");
+	HTML_PRINTF("\t<div class='dump'>\n");
 	HTML_PRINTF("\tColors meanings: \n");
 	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>left subtree node</div>", color.left_node + 1, color.left_node_border + 1);
 	HTML_PRINTF("\t\t<span style='color: %.7s'>&#11153; left subtree edge</span>\n", color.left_edge + 1);
 	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>right subtree node</div>", color.right_node + 1, color.right_node_border + 1);
 	HTML_PRINTF("\t\t<span style='color: %.7s'>&#11153; right subtree edge</span>\n", color.right_edge + 1);
-	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>root node</div>", color.root_node+ 1, color.root_node_border + 1);
+	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>root node</div>\n", color.root_node+ 1, color.root_node_border + 1);
+	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>new node</div>", color.new_node+ 1, color.new_node_border + 1);
 	HTML_PRINTF("\t</div>\n\n");
 
 #undef HTML_PRINTF
