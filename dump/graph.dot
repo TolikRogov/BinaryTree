@@ -1,0 +1,32 @@
+digraph {
+	fontname = "UbuntuMono";
+	bgcolor = "#F1D1D1";
+
+	node0x105501e70 [ shape = Mrecord; style = filled; fillcolor = "#FBEE21"; color = "#D3C70D"; fontcolor = "#000000";label = " { 5\n0x105501e70 | { <left> Left\n3\n0x105501db0 | Parent\n-666\n0x0 | <right> Right\n8\n0x105501e10 } } ";  ];
+	node0x105501e70:<left> -> node0x105501db0 [ style = "bold"; color = "#187AE8" ];
+	node0x105501db0 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 3\n0x105501db0 | { <left> Left\n1\n0x105501d20 | Parent\n5\n0x105501e70 | <right> Right\n4\n0x105501d80 } } ";  ];
+	node0x105501db0:<left> -> node0x105501d20 [ style = "bold"; color = "#187AE8" ];
+	node0x105501d20 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 1\n0x105501d20 | { <left> Left\n-666\n0x0 | Parent\n3\n0x105501db0 | <right> Right\n2\n0x105501c90 } } ";  ];
+	node0x105501d20:<right> -> node0x105501c90 [ style = "bold"; color = "#48E818" ];
+	node0x105501c90 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 2\n0x105501c90 | { <left> Left\n-666\n0x0 | Parent\n1\n0x105501d20 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501c90 [ shape = Mrecord; style = filled; fillcolor = "#BDEF9E"; color = "#99c2a2"; fontcolor = "#000000";label = " { 2\n0x105501c90 | { <left> Left\n-666\n0x0 | Parent\n1\n0x105501d20 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501db0:<right> -> node0x105501d80 [ style = "bold"; color = "#48E818" ];
+	node0x105501d80 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 4\n0x105501d80 | { <left> Left\n-666\n0x0 | Parent\n3\n0x105501db0 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501d80 [ shape = Mrecord; style = filled; fillcolor = "#BDEF9E"; color = "#99c2a2"; fontcolor = "#000000";label = " { 4\n0x105501d80 | { <left> Left\n-666\n0x0 | Parent\n3\n0x105501db0 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501e70:<right> -> node0x105501e10 [ style = "bold"; color = "#48E818" ];
+	node0x105501e10 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 8\n0x105501e10 | { <left> Left\n5\n0x105501de0 | Parent\n5\n0x105501e70 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501e10:<left> -> node0x105501de0 [ style = "bold"; color = "#187AE8" ];
+	node0x105501de0 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 5\n0x105501de0 | { <left> Left\n-666\n0x0 | Parent\n8\n0x105501e10 | <right> Right\n6\n0x105501d50 } } ";  ];
+	node0x105501de0:<right> -> node0x105501d50 [ style = "bold"; color = "#48E818" ];
+	node0x105501d50 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 6\n0x105501d50 | { <left> Left\n5\n0x105501cf0 | Parent\n5\n0x105501de0 | <right> Right\n6\n0x105501cc0 } } ";  ];
+	node0x105501d50:<left> -> node0x105501cf0 [ style = "bold"; color = "#187AE8" ];
+	node0x105501cf0 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 5\n0x105501cf0 | { <left> Left\n-666\n0x0 | Parent\n6\n0x105501d50 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501d50:<right> -> node0x105501cc0 [ style = "bold"; color = "#48E818" ];
+	node0x105501cc0 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 6\n0x105501cc0 | { <left> Left\n-666\n0x0 | Parent\n6\n0x105501d50 | <right> Right\n7\n0x105501c60 } } ";  ];
+	node0x105501cc0:<right> -> node0x105501c60 [ style = "bold"; color = "#48E818" ];
+	node0x105501c60 [ shape = Mrecord; style = filled; fillcolor = "#D5CFE1"; color = "#8797b2"; fontcolor = "#000000";label = " { 7\n0x105501c60 | { <left> Left\n-666\n0x0 | Parent\n6\n0x105501cc0 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501c60 [ shape = Mrecord; style = filled; fillcolor = "#BDEF9E"; color = "#99c2a2"; fontcolor = "#000000";label = " { 7\n0x105501c60 | { <left> Left\n-666\n0x0 | Parent\n6\n0x105501cc0 | <right> Right\n-666\n0x0 } } ";  ];
+	node0x105501cc0 [ shape = Mrecord; style = filled; fillcolor = "#BDEF9E"; color = "#99c2a2"; fontcolor = "#000000";label = " { 6\n0x105501cc0 | { <left> Left\n-666\n0x0 | Parent\n6\n0x105501d50 | <right> Right\n7\n0x105501c60 } } ";  ];
+	node0x105501d50 [ shape = Mrecord; style = filled; fillcolor = "#BDEF9E"; color = "#99c2a2"; fontcolor = "#000000";label = " { 6\n0x105501d50 | { <left> Left\n5\n0x105501cf0 | Parent\n5\n0x105501de0 | <right> Right\n6\n0x105501cc0 } } ";  ];
+	node0x105501e10 [ shape = Mrecord; style = filled; fillcolor = "#BDEF9E"; color = "#99c2a2"; fontcolor = "#000000";label = " { 8\n0x105501e10 | { <left> Left\n5\n0x105501de0 | Parent\n5\n0x105501e70 | <right> Right\n-666\n0x0 } } ";  ];
+}

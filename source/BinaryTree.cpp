@@ -1,5 +1,20 @@
 #include "BinaryTree.hpp"
 
+char TREE_DUMP = TREE_FIRST_RUN;
+
+BinaryTreeStatusCode TreeCtor() {
+
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
+	if (TREE_DUMP == TREE_ALREADY_ON)
+		return TREE_NO_ERROR;
+
+	TREE_HTML_DUMP_START();
+	TREE_DUMP = TREE_ALREADY_ON;
+
+	return TREE_NO_ERROR;
+}
+
 BinaryTreeStatusCode TreeDtor(Node_t* node) {
 
 	if (node->left) TreeDtor(node->left);
