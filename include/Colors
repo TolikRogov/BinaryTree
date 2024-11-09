@@ -18,4 +18,6 @@ static struct Colors {
 	const char* root_node_border					= "\"#D3C70D\"";
 	const char* left_edge 							= "\"#187AE8\"";
 	const char* right_edge							= "\"#48E818\"";
+	const char* new_node 							= "\"#F18805\"";
+	const char* new_node_border						= "\"#AF3800\"";
 } color;

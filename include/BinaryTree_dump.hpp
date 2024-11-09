@@ -24,12 +24,13 @@ struct DumpLogInfo {
 	const char* file;
 	const size_t line;
 	const char* func;
+	const Node_t* pointer;
 };
 
 BinaryTreeStatusCode BinaryTreeCssFile();
 BinaryTreeStatusCode BinaryTreeCreateDumpDir();
 BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo dump_info);
 BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info);
-BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file);
+BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file, DumpLogInfo dump_info);
 
 #endif //BINARY_TREE_DUMP

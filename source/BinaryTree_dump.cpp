@@ -239,7 +239,7 @@ BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info) {
 	DOT_PRINTF("\tfontname = \"UbuntuMono\";\n");
 	DOT_PRINTF("\tbgcolor = %s;\n\n", color.dot_background);
 
-	NodeGraphDump(tree->root, dot_file);
+	NodeGraphDump(tree->root, dot_file, dump_info);
 
 	DOT_PRINTF("}\n");
 
@@ -254,7 +254,7 @@ BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info) {
 	return TREE_NO_ERROR;
 }
 
-BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file) {
+BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file, DumpLogInfo dump_info) {
 
 #define DOT_PRINTF(...) fprintf(dot_file, __VA_ARGS__);
 
@@ -268,18 +268,37 @@ BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file) {
 
 	if (cur_root->left) {
 		DOT_PRINTF("\tnode%p:<left> -> node%p [ style = \"bold\"; color = %s ];\n", cur_root, cur_root->left, color.left_edge);
-		NodeGraphDump(cur_root->left, dot_file);
+		NodeGraphDump(cur_root->left, dot_file, dump_info);
 	}
 	if (cur_root->right) {
 		DOT_PRINTF("\tnode%p:<right> -> node%p [ style = \"bold\"; color = %s ];\n", cur_root, cur_root->right, color.right_edge);
-		NodeGraphDump(cur_root->right, dot_file);
-				DOT_PRINTF("\tnode%p [ shape = Mrecord; style = filled; fillcolor = %s; color = %s; fontcolor = %s;"
+		NodeGraphDump(cur_root->right, dot_file, dump_info);
+		DOT_PRINTF("\tnode%p [ shape = Mrecord; style = filled; fillcolor = %s; color = %s; fontcolor = %s;"
 				"label = \" { %d\\n%p | { <left> Left\\n%d\\n%p | Parent\\n%d\\n%p | <right> Right\\n%d\\n%p } } \";  ];\n",
 				cur_root->right, color.right_node, color.right_node_border, color.node_font,
 				cur_root->right->data, cur_root->right,
 				(cur_root->right->left ? cur_root->right->left->data : UNKNOWN_WHAT), cur_root->right->left,
 				(cur_root->right->parent ? cur_root->right->parent->data : UNKNOWN_WHAT), cur_root->right->parent,
 				(cur_root->right->right ? cur_root->right->right->data : UNKNOWN_WHAT), cur_root->right->right);
+	}
+
+	if (cur_root->right == dump_info.pointer) {
+		DOT_PRINTF("\tnode%p [ shape = Mrecord; style = filled; fillcolor = %s; color = %s; fontcolor = %s;"
+				"label = \" { %d\\n%p | { <left> Left\\n%d\\n%p | Parent\\n%d\\n%p | <right> Right\\n%d\\n%p } } \";  ];\n",
+				cur_root->right, color.new_node, color.new_node_border, color.node_font,
+				cur_root->right->data, cur_root->right,
+				(cur_root->right->left ? cur_root->right->left->data : UNKNOWN_WHAT), cur_root->right->left,
+				(cur_root->right->parent ? cur_root->right->parent->data : UNKNOWN_WHAT), cur_root->right->parent,
+				(cur_root->right->right ? cur_root->right->right->data : UNKNOWN_WHAT), cur_root->right->right);
+	}
+	if (cur_root->left == dump_info.pointer) {
+		DOT_PRINTF("\tnode%p [ shape = Mrecord; style = filled; fillcolor = %s; color = %s; fontcolor = %s;"
+				"label = \" { %d\\n%p | { <left> Left\\n%d\\n%p | Parent\\n%d\\n%p | <right> Right\\n%d\\n%p } } \";  ];\n",
+				cur_root->left, color.new_node, color.new_node_border, color.node_font,
+				cur_root->left->data, cur_root->left,
+				(cur_root->left->left ? cur_root->left->left->data : UNKNOWN_WHAT), cur_root->left->left,
+				(cur_root->left->parent ? cur_root->left->parent->data : UNKNOWN_WHAT), cur_root->left->parent,
+				(cur_root->left->right ? cur_root->left->right->data : UNKNOWN_WHAT), cur_root->left->right);
 	}
 
 #undef DOT_PRINTF

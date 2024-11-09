@@ -9,9 +9,9 @@ typedef int Data_t;
 
 #define INIT_TREE(tree) Tree tree = { .root = CreateNode(UNKNOWN_WHAT), .info = {.name = #tree, .file_name = __FILE__, .line = __LINE__} }; TREE_CTOR();
 
-#define BINARY_TREE_GRAPH_DUMP(tree, func_name) {	 														\
-	tree_status = BinaryTreeGraphDump(tree, {.file = __FILE__, .line = __LINE__, .func = func_name});		\
-	TREE_ERROR_CHECK(tree_status);																	 		\
+#define BINARY_TREE_GRAPH_DUMP(tree, func_name, point) {	 																\
+	tree_status = BinaryTreeGraphDump(tree, {.file = __FILE__, .line = __LINE__, .func = func_name, .pointer = point});		\
+	TREE_ERROR_CHECK(tree_status);																	 					   \
 }
 
 #define PRINT_TREE(root, order) {			 \
@@ -43,15 +43,18 @@ typedef int Data_t;
 
 #ifndef PRINT_DEBUG
 	#define INSERT_IN_TREE(tree, new_element_data, order) {					 		 \
-		tree_status = InsertInTree((tree)->root, CreateNode(new_element_data));		\
+		Node_t* new_node =  CreateNode(new_element_data);							\
+		tree_status = InsertInTree((tree)->root, new_node);							\
 		TREE_ERROR_CHECK(tree_status);												\
-		BINARY_TREE_GRAPH_DUMP(tree, "INSERT_IN_TREE");								\
+		BINARY_TREE_GRAPH_DUMP(tree, "INSERT_IN_TREE", new_node);					\
 	}
 #else
 	#define INSERT_IN_TREE(root, new_element_data, order) {					 \
-		tree_status = InsertInTree(root, CreateNode(new_element_data));		\
+		Node_t* new_node =  CreateNode(new_element_data);					\
+		tree_status = InsertInTree(root, new_node);							\
 		TREE_ERROR_CHECK(tree_status);										\
 		PRINT_TREE(root, order)												\
+		BINARY_TREE_GRAPH_DUMP(tree, "INSERT_IN_TREE", new_node);			\
 	}
 #endif
 
